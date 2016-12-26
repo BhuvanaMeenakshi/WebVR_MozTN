@@ -1,0 +1,35 @@
+<html>
+  <head>
+  <meta charset="utf-8">
+  <title>Happy New Year</title>
+    <script src="https://aframe.io/releases/0.3.2/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-entity position="0 2.25 -15" particle-system="preset: dust"></a-entity>
+            <a-entity position="0 2.25 -15" particle-system="preset: snow"></a-entity> 
+    
+      <a-sound src="src: url(fireworks.mp3)" autoplay loop="true" volume="100" position="0 2 5"></a-sound>
+     <a-assets>
+       <img id="balloon" src="balloon.png" />
+       <img id="fire" src="fire.jpg" />
+     </a-assets>
+  <a-entity>
+    <a-animation attribute="position" from="-2 2 -4" to="5 4 -15" repeat="indefinite"></a-animation>
+     <a-image position="-16 4 -15" height="15" width="15"  src="#balloon"></a-image>
+     </a-entity>
+    
+  
+     <a-entity position="-5 -5 -15">
+            <a-entity geometry="primitive: sphere; radius: 1" position="-1 1 0" material="color: #d50f25">
+                <a-animation attribute="position" from="-30 1 -15" to="19 1 -15" duration="3000" direction="normal" repeat="indefinite"></a-animation></a-entity>
+            <a-entity geometry="primitive: sphere; radius: 1" position="1 1 0" material="color: #009939">
+                <a-animation attribute="position" from="40 1 -15" to="1 1 -15" duration="3000" direction="normal" repeat="indefinite"></a-animation></a-entity>
+            
+            
+     <a-sky src="#fire"></a-sky>
+     
+    </a-scene>
+  </body>
+</html>
